@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 body{
   display: flex;
   align-items: center;
@@ -12,6 +14,7 @@ body{
   min-height: 100vh;
   background: #4A98F7;
 }
+
 .container{
   display: flex;
   width: 100%;
@@ -19,16 +22,16 @@ body{
   padding: 10px;
   max-width: 1050px;
 }
-section{
-  background: #fff;
-  border-radius: 7px;
-}
+
 .tools-board{
+  box-shadow: 0px 0px 30px rgb(42, 42, 87);
+  background-color: white;
+  border-radius: 5px;
   width: 210px;
-  padding: 15px 22px 0;
+  padding: 15px 22px;
 }
 .tools-board .row{
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .row .options{
   list-style: none;
@@ -40,25 +43,30 @@ section{
   align-items: center;
   margin-bottom: 10px;
 }
-.option:is(:hover, .active) img{
-  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
-}
-.option :where(span, label){
-  color: #5A6168;
-  cursor: pointer;
-  padding-left: 10px;
-}
-.option:is(:hover, .active) :where(span, label){
+
+.option:is(:hover, .active) .bi{
   color: #4A98F7;
 }
+
+.option span{
+  padding-left: 10px;
+  color: #5A6168;
+}
+
+.option:is(:hover, .active) span{
+  color: #4A98F7;
+}
+
 .option #fill-color{
   cursor: pointer;
   height: 14px;
   width: 14px;
 }
-#fill-color:checked ~ label{
+
+#fill-color:checked ~ span{
   color: #4A98F7;
 }
+
 .option #size-slider{
   width: 100%;
   height: 5px;
@@ -77,7 +85,7 @@ section{
 }
 .colors .option:nth-child(1){
   background-color: #fff;
-  border: 1px solid #bfbfbf;
+  border: 2px solid #bfbfbf;
 }
 .colors .option:nth-child(2){
   background-color: #000;
@@ -100,7 +108,7 @@ section{
   width: 12px;
   background: inherit;
   border-radius: inherit;
-  border: 2px solid #fff;
+  border: 2px solid white;
   transform: translate(-50%, -50%);
 }
 .colors .option:first-child.selected::before{
@@ -110,6 +118,7 @@ section{
   opacity: 0;
   cursor: pointer;
 }
+
 .buttons button{
   width: 100%;
   color: #fff;
@@ -125,21 +134,31 @@ section{
 .buttons .clear-canvas{
   color: #6C757D;
   border: 1px solid #6C757D;
-  transition: all 0.3s ease;
 }
 .clear-canvas:hover{
   color: #fff;
   background: #6C757D;
+  transition: all .3s linear;
 }
 .buttons .save-img{
   background: #4A98F7;
   border: 1px solid #4A98F7;
 }
+
+.buttons .save-img:hover{
+  background: rgb(11, 11, 225);
+  transition: all .3s linear;
+}
+
 .drawing-board{
   flex: 1;
   overflow: hidden;
+  box-shadow: 0px 0px 30px rgb(42, 42, 87);
 }
+
 .drawing-board canvas{
   width: 100%;
   height: 100%;
+  border-radius: 5px;
+  
 }

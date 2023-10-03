@@ -13,10 +13,10 @@ let prevMouseX, prevMouseY, snapshot,
 isDrawing = false,
 selectedTool = "brush",
 brushWidth = 5,
-selectedColor = "#000";
+selectedColor = "black";
 
 const setCanvasBackground = () => {
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = selectedColor;
 }
